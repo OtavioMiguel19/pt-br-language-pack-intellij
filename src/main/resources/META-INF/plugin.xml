@@ -1,15 +1,19 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.otaviomiguel19.ptbrlanguagepackintellij</id>
-    <name>pt-br-language-pack-intellij</name>
-    <vendor>otaviomiguel19</vendor>
+    <name>Portuguese (Brazil) Language Pack / Pacote de Idioma Português (Brasil)</name>
+    <version>1.0.0</version>
+    <vendor email="seuemail@exemplo.com" url="https://github.com/OtavioMiguel19/pt-br-language-pack-intellij">Otavio Miguel</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <description><![CDATA[
+        <p>Pacote de idioma para traduzir a interface do IntelliJ IDEA e outros IDEs baseados na IntelliJ Platform para Português do Brasil.</p>
+        <p>Language pack that translates the IntelliJ IDEA UI and other IntelliJ Platform-based IDEs into Brazilian Portuguese.</p>
+        <br/>
+        <p>Após instalar, vá em <b>Settings → Appearance &amp; Behavior → System Settings → Language and Region</b> e selecione <b>Português (Brasil)</b>.</p>
+    ]]></description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.otaviomiguel19.ptbrlanguagepackintellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.otaviomiguel19.ptbrlanguagepackintellij.startup.MyProjectActivity" />
+        <languageBundle locale="pt-BR"/>
     </extensions>
 </idea-plugin>

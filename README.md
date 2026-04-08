@@ -1,52 +1,100 @@
-# pt-br-language-pack-intellij
+# Portuguese (Brazil) Language Pack / Pacote de Idioma Português (Brasil)
 
 ![Build](https://github.com/OtavioMiguel19/pt-br-language-pack-intellij/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-- [ ] Configure the [CODECOV_TOKEN](https://docs.codecov.com/docs/quick-start) secret for automated test coverage reports on PRs
-
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+Pacote de idioma que traduz a interface dos IDEs baseados na IntelliJ Platform para **Português do Brasil (pt-BR)**.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+Traduz menus, diálogos, configurações, janelas de ferramentas e outras partes da interface do usuário.
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+### IDEs Compatíveis
+- IntelliJ IDEA
+- WebStorm
+- PyCharm
+- PhpStorm
+- GoLand
+- CLion
+- Rider
+- RubyMine
+- DataGrip
+- E outros IDEs baseados na IntelliJ Platform
+
+### Como Ativar
+Após instalar o plugin, vá em **Settings → Appearance & Behavior → System Settings → Language and Region** e selecione **Português (Brasil)**.
 <!-- Plugin description end -->
 
-## Installation
+## Instalação
 
-- Using the IDE built-in plugin system:
+- Pelo IDE:
 
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "pt-br-language-pack-intellij"</kbd> >
-  <kbd>Install</kbd>
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > Pesquise por **"Portuguese (Brazil) Language Pack"** > <kbd>Install</kbd>
 
-- Using JetBrains Marketplace:
+- Manualmente:
 
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
-
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
+  Baixe o [último release](https://github.com/OtavioMiguel19/pt-br-language-pack-intellij/releases/latest) e instale manualmente em
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
-- Manually:
+## Contribuindo
 
-  Download the [latest release](https://github.com/OtavioMiguel19/pt-br-language-pack-intellij/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+Contribuições são bem-vindas! Os arquivos de tradução estão em `src/main/resources/messages/`.
 
+Cada arquivo `.properties` corresponde a um bundle de mensagens do IntelliJ Platform. As chaves devem corresponder exatamente às chaves originais dos bundles da plataforma.
+
+## Estrutura do Projeto
+
+```
+src/main/resources/
+├── META-INF/
+│   └── plugin.xml                  # Configuração do plugin com languageBundle locale="pt-BR"
+└── messages/
+    ├── ActionsBundle.properties     # Menus e ações
+    ├── AnalysisBundle.properties    # Análise de código e inspeções
+    ├── ApplicationBundle.properties # Configurações do aplicativo
+    ├── CodeInsightBundle.properties # Completar código, navegação
+    ├── CommonBundle.properties      # Textos comuns (botões, títulos)
+    ├── CopyrightBundle.properties   # Configurações de copyright
+    ├── CoreBundle.properties        # Núcleo da plataforma
+    ├── DatabaseBundle.properties    # Banco de dados
+    ├── DebuggerBundle.properties    # Depurador
+    ├── DiagnosticBundle.properties  # Erros e diagnósticos
+    ├── DiffBundle.properties        # Diferenças e mesclagem
+    ├── DockerBundle.properties      # Docker
+    ├── EditorBundle.properties      # Editor de código
+    ├── ExecutionBundle.properties   # Execução e depuração
+    ├── FileTypesBundle.properties   # Tipos de arquivo
+    ├── FindBundle.properties        # Busca e localização
+    ├── GitBundle.properties         # Git
+    ├── GradleBundle.properties      # Gradle
+    ├── HttpClientBundle.properties  # Cliente HTTP
+    ├── IdeBundle.properties         # Textos gerais do IDE
+    ├── IndexingBundle.properties    # Indexação
+    ├── JavaBundle.properties        # Java
+    ├── JsonBundle.properties        # JSON
+    ├── KeyMapBundle.properties      # Mapa de teclas
+    ├── KotlinBundle.properties      # Kotlin
+    ├── LangBundle.properties        # Funcionalidades de linguagem
+    ├── MarkdownBundle.properties    # Markdown
+    ├── MavenBundle.properties       # Maven
+    ├── OptionsBundle.properties     # Opções e configurações
+    ├── PlatformBundle.properties    # Plataforma (atualizações, licença)
+    ├── ProjectBundle.properties     # Estrutura do projeto
+    ├── PropertiesBundle.properties  # Arquivos de propriedades
+    ├── RefactoringBundle.properties # Refatoração
+    ├── RegExpBundle.properties      # Expressões regulares
+    ├── ScopeBundle.properties       # Escopos
+    ├── SpellCheckerBundle.properties # Verificador ortográfico
+    ├── SSHBundle.properties         # SSH
+    ├── TerminalBundle.properties    # Terminal
+    ├── TodoBundle.properties        # TODO
+    ├── ToolWindowBundle.properties  # Janelas de ferramentas
+    ├── UIBundle.properties          # Componentes de UI
+    ├── UsageViewBundle.properties   # Visualização de usos
+    └── VcsBundle.properties         # Controle de versão
+```
 
 ---
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+Plugin baseado no [IntelliJ Platform Plugin Template][template].
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
